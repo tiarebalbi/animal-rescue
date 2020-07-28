@@ -7,11 +7,6 @@
       "method": "GET"
     },
     {
-      "title": "API Actuator endpoints",
-      "description": "Access API actuator endpoints to provide current status of backend service.",
-      "path": "/api/actuator/**"
-    },
-    {
       "title": "Retrieve user information",
       "description": "Retrive the current authenticated user's information.",
       "path": "/api/whoami",

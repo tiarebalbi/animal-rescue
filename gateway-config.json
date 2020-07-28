@@ -1,6 +1,8 @@
 {
+  "host": "gateway-demo-s1p",
   "sso": {
-    "plan": "uaa"
+    "plan": "okta",
+    "identity-providers": [ "saml-identity-provider-for-adopters" ]
   },
-  "host": "gateway-demo"
+  "count": 2
 }

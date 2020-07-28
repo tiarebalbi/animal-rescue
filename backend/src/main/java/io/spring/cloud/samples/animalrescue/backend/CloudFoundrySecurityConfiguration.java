@@ -21,7 +21,6 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 import io.pivotal.cfenv.core.CfEnv;
 
 @Configuration
-@ConditionalOnCloudPlatform(CloudPlatform.CLOUD_FOUNDRY)
 public class CloudFoundrySecurityConfiguration {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CloudFoundrySecurityConfiguration.class);
