@@ -1,0 +1,24 @@
+apiVersion: skaffold/v2beta6
+kind: Config
+build:
+  artifacts:
+  - image: springcloudservices/animal-rescue-backend-k8s
+    context: backend
+    buildpacks:
+      builder: gcr.io/paketo-buildpacks/builder:base-platform-api-latest
+      dependencies:
+        paths:
+        - src
+        - build.gradle
+  - image: springcloudservices/animal-rescue-frontend-k8s
+    context: frontend/
+    buildpacks:
+      builder: gcr.io/paketo-buildpacks/builder:base-platform-api-latest
+      dependencies:
+        paths:
+        - .
+deploy:
+  kustomize:
+    paths:
+    - backend/k8s/
+    - frontend/k8s/
