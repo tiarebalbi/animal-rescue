@@ -21,17 +21,4 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 5000
-        livenessProbe:
-          httpGet:
-            port: 5000
-            path: /
-        readinessProbe:
-          httpGet:
-            port: 5000
-            path: /
-        lifecycle:
-          preStop:
-            exec:
-              command: ["sh", "-c", "sleep 10"]
       restartPolicy: Always
-
