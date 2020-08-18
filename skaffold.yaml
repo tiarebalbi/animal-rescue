@@ -4,7 +4,7 @@ build:
   tagPolicy:
     sha256: {}
   artifacts:
-  - image: springcloudservices/animal-rescue-backend-k8s
+  - image: springcloudservices/animal-rescue-k8s
     context: backend
     buildpacks:
       builder: gcr.io/paketo-buildpacks/builder:base-platform-api-latest
@@ -12,7 +12,17 @@ build:
         paths:
         - src
         - build.gradle
+  - image: springcloudservices/animal-rescue-partner
+    context: external-api
+    buildpacks:
+      builder: gcr.io/paketo-buildpacks/builder:base-platform-api-latest
+      dependencies:
+        paths:
+        - .
+        ignore:
+        - node_modules
 deploy:
   kustomize:
     paths:
     - backend/k8s/
+    - external-api/k8s/

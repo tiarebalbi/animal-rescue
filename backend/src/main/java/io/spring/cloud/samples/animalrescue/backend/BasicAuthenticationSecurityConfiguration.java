@@ -38,8 +38,8 @@ public class BasicAuthenticationSecurityConfiguration {
 		return httpSecurity
 			.httpBasic(withDefaults())
 			.authorizeExchange()
-				.pathMatchers("/api/**").authenticated()
-				.anyExchange().permitAll()
+				.pathMatchers("/actuator/**").permitAll()
+				.anyExchange().authenticated()
 			.and()
 			.build();
 		// @formatter:on

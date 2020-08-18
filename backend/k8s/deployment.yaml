@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: animal-rescue
   labels:
-    app: backend
+    app: animal-rescue
 spec:
   selector:
     matchLabels:
-      app: backend
+      app: animal-rescue
   replicas: 1
   template:
     metadata:
-      name: backend
+      name: animal-rescue
       labels:
-        app: backend
+        app: animal-rescue
     spec:
       containers:
-      - name: backend
-        image: springcloudservices/animal-rescue-backend-k8s
+      - name: animal-rescue
+        image: springcloudservices/animal-rescue-k8s
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
