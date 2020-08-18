@@ -44,6 +44,11 @@ spec:
               secretKeyRef:
                 name: animal-rescue-basic
                 key: password
+          - name: ANIMAL_RESCUE_SECURITY_BASIC_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: animal-rescue-basic
+                key: username
 
       volumes:
         - name: "application-config-volume"

@@ -38,20 +38,25 @@ public class BasicAuthenticationSecurityConfiguration {
 		return httpSecurity
 			.httpBasic(withDefaults())
 			.authorizeExchange()
-				.pathMatchers("/actuator/**").permitAll()
-				.anyExchange().authenticated()
+				.pathMatchers("/api/**").authenticated()
+				.anyExchange().permitAll()
 			.and()
 			.build();
 		// @formatter:on
 	}
 
-	/**
-	 * @author Ollie Hughes
-	 */
 	@ConfigurationProperties("animal.rescue.security.basic")
 	public static class BasicAuthProperties {
 		private String username;
 		private String password;
+
+		public void setUsername(String username) {
+			this.username = username;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
 
 		public String getUsername() {
 			return username;

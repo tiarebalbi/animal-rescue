@@ -12,8 +12,8 @@
     "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "REACT_APP_BACKEND_BASE_URI=http://192.168.1.225:8080 react-scripts build && REACT_APP_LOGIN_URI=http://backend:8080/login REACT_APP_LOGOUT_URI=http://backend:8080/logout serve build",
-    "build": "REACT_APP_BACKEND_BASE_URI=/api react-scripts build",
+    "start": "wait-on tcp:8080 && REACT_APP_LOGIN_URI=http://localhost:8080/login REACT_APP_LOGOUT_URI=http://localhost:8080/logout react-scripts start",
+    "build": "REACT_APP_BACKEND_BASE_URI=/api react-scripts build && cp -r build/ ../backend/src/main/resources/static",
     "lint": "eslint src",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
