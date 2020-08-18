@@ -35,7 +35,16 @@ spec:
               command: ["sh", "-c", "sleep 10"]
         volumeMounts:
           - name: application-config-volume
-            mountPath: /config
+            mountPath: /config/rescue/
+        env:
+          - name: SPRING_CONFIG_LOCATION
+            value: /config/rescue/application.yaml
+          - name: ANIMAL_RESCUE_SECURITY_BASIC_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: animal-rescue-basic
+                key: password
+
       volumes:
         - name: "application-config-volume"
           configMap:

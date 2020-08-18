@@ -12,7 +12,7 @@
     "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "REACT_APP_BACKEND_BASE_URI=/api react-scripts build && REACT_APP_LOGIN_URI=http://backend:8080/login REACT_APP_LOGOUT_URI=http://backend:8080/logout serve build",
+    "start": "REACT_APP_BACKEND_BASE_URI=http://192.168.1.225:8080 react-scripts build && REACT_APP_LOGIN_URI=http://backend:8080/login REACT_APP_LOGOUT_URI=http://backend:8080/logout serve build",
     "build": "REACT_APP_BACKEND_BASE_URI=/api react-scripts build",
     "lint": "eslint src",
     "test": "react-scripts test",
@@ -20,7 +20,6 @@
     "wait-on": "^4.0.0"
   },
   "proxy": "http://backend:8080",
-  "homepage": "/rescue",
   "eslintConfig": {
     "extends": "react-app"
   },

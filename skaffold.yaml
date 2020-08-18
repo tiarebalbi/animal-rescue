@@ -10,13 +10,6 @@ build:
         paths:
         - src
         - build.gradle
-  - image: springcloudservices/animal-rescue-frontend-k8s
-    context: frontend/
-    buildpacks:
-      builder: gcr.io/paketo-buildpacks/builder:base-platform-api-latest
-      dependencies:
-        paths:
-        - .
 deploy:
   kustomize:
     paths:
