@@ -12,10 +12,12 @@ configMapGenerator:
   files:
   - application.yaml
 secretGenerator:
-  - name: basic-auth-secret
+- name: animal-rescue-basic
+  type: Opaque
+  envs:
+  - secret.env
 
 resources:
 - deployment.yaml
 - service.yaml
 - namespace.yaml
-- secret.yaml

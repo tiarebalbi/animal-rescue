@@ -39,6 +39,8 @@ spec:
         env:
           - name: SPRING_CONFIG_LOCATION
             value: /config/rescue/application.yaml
+          - name: SPRING_PROFIELS_ACTIVE
+            value: basic
           - name: ANIMAL_RESCUE_SECURITY_BASIC_PASSWORD
             valueFrom:
               secretKeyRef:
