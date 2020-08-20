@@ -1,23 +1,16 @@
 const http = require('http');
 const axios = require('axios');
 
-const animalRescueBaseUrl = process.env.ANIMAL_RESCUE_BASE_URL
-const animalRescueUsername = process.env.ANIMAL_RESCUE_USERNAME
-const animalRescuePassword = process.env.ANIMAL_RESCUE_PASSWORD
+const animalRescueBaseUrl = process.env.ANIMAL_RESCUE_BASE_URL;
 
 const requestAnimalsFromAnimalRescue = async () => {
     try {
-        const response = await axios.get(`${animalRescueBaseUrl}/api/animals`, {
-            auth: {
-                username: animalRescueUsername,
-                password: animalRescuePassword
-            }
-        });
+        const response = await axios.get(`${animalRescueBaseUrl}/api/animals`);
         return response.data;
     } catch (e) {
         console.error(e);
     }
-}
+};
 
 const server = http.createServer(async (req, res) => {
     if (req.url === '/') {

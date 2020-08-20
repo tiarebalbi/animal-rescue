@@ -1,6 +1,8 @@
 spring:
   application:
     name: animal-rescue-backend
+  profiles:
+    active: no-auth
   main:
     banner-mode: off
   info:

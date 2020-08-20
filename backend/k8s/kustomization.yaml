@@ -11,11 +11,6 @@ configMapGenerator:
 - name: application-configmap
   files:
   - application.yaml
-secretGenerator:
-- name: animal-rescue-basic
-  type: Opaque
-  envs:
-  - secret.env
 
 resources:
 - deployment.yaml

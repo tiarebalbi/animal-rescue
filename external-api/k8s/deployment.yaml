@@ -25,14 +25,5 @@ spec:
         env:
           - name: ANIMAL_RESCUE_BASE_URL
             value: http://animal-rescue.animal-rescue.svc.cluster.local
-          - name: ANIMAL_RESCUE_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: animal-rescue-basic
-                key: password
-          - name: ANIMAL_RESCUE_USERNAME
-            valueFrom:
-              secretKeyRef:
-                name: animal-rescue-basic
-                key: username
+
 
