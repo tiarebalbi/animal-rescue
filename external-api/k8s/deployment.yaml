@@ -25,5 +25,3 @@ spec:
         env:
           - name: ANIMAL_RESCUE_BASE_URL
             value: http://animal-rescue.animal-rescue.svc.cluster.local
-
-
