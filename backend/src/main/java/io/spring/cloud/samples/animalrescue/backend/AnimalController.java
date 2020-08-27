@@ -35,7 +35,7 @@ public class AnimalController {
 	@GetMapping("/whoami")
 	public String whoami(Principal principal) {
 		if (principal == null) {
-			return "UNKNOWN_USER";
+			return "";
 		}
 		return principal.getName();
 	}
