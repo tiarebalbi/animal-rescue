@@ -15,7 +15,8 @@ spec:
   - host: ollie.spring.animalrescue.online
     http:
       paths:
-      - backend:
+      - path: "/v1"
+        backend:
           serviceName: animal-rescue
           servicePort: 80
   - host: partner.ollie.spring.animalrescue.online

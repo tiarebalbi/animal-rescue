@@ -10,9 +10,13 @@ secretGenerator:
   envs:
   - secret/oauth2-internal-proxy-creds
   type: Opaque
+- name: ingress-basic-auth
+  type: Opaque
+  files:
+  - auth
 generatorOptions:
   disableNameSuffixHash: true
 resources:
 - animal-rescue-external-ingress.yaml
 - animal-rescue-internal-ingress.yaml
-
+#- animal-rescue-ingress.yaml

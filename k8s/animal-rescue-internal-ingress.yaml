@@ -15,7 +15,7 @@ spec:
     - host: ollie.spring.animalrescue.online
       http:
         paths:
-        - path: "/actuator"
+        - path: "/v1/actuator"
           backend:
             serviceName: animal-rescue
             servicePort: 80

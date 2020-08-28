@@ -24,11 +24,11 @@ spec:
         livenessProbe:
           httpGet:
             port: 8080
-            path: /actuator/health/liveness
+            path: /v1/actuator/health/liveness
         readinessProbe:
           httpGet:
             port: 8080
-            path: /actuator/health/readiness
+            path: /v1/actuator/health/readiness
         lifecycle:
           preStop:
             exec:
