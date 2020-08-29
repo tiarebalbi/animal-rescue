@@ -6,9 +6,16 @@ secretGenerator:
   type: Opaque
   files:
   - auth
+- name: cloud-dns-admin
+  type: Opaque
+  namespace: external-dns
+  files:
+  - secret/gcp-dns-account-credentials.json
 
 generatorOptions:
   disableNameSuffixHash: true
 
 resources:
 - animal-rescue-ingress.yaml
+- letsencrypt-staging.yaml
+- letsencrypt-prod.yaml

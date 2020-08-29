@@ -7,9 +7,18 @@ metadata:
     nginx.ingress.kubernetes.io/auth-type: basic
     # name of the secret that contains the user/password definitions
     nginx.ingress.kubernetes.io/auth-secret: ingress-basic-auth
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    kubernetes.io/tls-acme: "true"
   name: animal-rescue-ingress
   namespace: animal-rescue
 spec:
+  tls:
+    - hosts:
+        - animalrescue.bella.kubedemo.xyz
+      secretName: animal-rescue-certs
+    - hosts:
+        - partner.bella.kubedemo.xyz
+      secretName: partner-certs
   rules:
     - host: animalrescue.bella.kubedemo.xyz
       http:
