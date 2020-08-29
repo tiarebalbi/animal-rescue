@@ -1,9 +1,9 @@
 config:
-  existingSecret: oauth2-external-proxy-creds
+  existingSecret: oauth2-external-proxy-creds-kubedemo
 
 extraArgs:
-  whitelist-domain: .spring.animalrescue.online
-  cookie-domain: .spring.animalrescue.online
+  whitelist-domain: .kubedemo.xyz
+  cookie-domain: .kubedemo.xyz
   provider: github
 
 authenticatedEmailsFile:
@@ -17,12 +17,12 @@ ingress:
   enabled: true
   path: /
   hosts:
-  - auth-external.spring.animalrescue.online
+  - auth-external.kubedemo.xyz
   annotations:
     nginx.ingress.kubernetes.io/proxy-buffer-size: "16k"
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/cluster-issuer: letsencrypt-staging
     kubernetes.io/tls-acme: "true"
   tls:
   - secretName: oauth2-external-proxy-https-cert
     hosts:
-    - auth-external.spring.animalrescue.online
+    - auth-external.kubedemo.xyz

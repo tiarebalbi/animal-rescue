@@ -1,0 +1,9 @@
+sources:
+- service
+- ingress
+domainFilters:
+- kubedemo.xyz
+provider: google
+google:
+  project: cf-spring-scs
+  serviceAccountSecret: clouddns-dns01-solver-svc-acct

@@ -7,7 +7,7 @@ const animalRescuePassword = process.env.ANIMAL_RESCUE_PASSWORD || '';
 
 const requestAnimalsFromAnimalRescue = async () => {
     try {
-        const response = await axios.get(`${animalRescueBaseUrl}/v1/api/animals`);
+        const response = await axios.get(`${animalRescueBaseUrl}/api/animals`);
         return { animals: response.data };
     } catch (e) {
         console.error(e);
@@ -16,7 +16,7 @@ const requestAnimalsFromAnimalRescue = async () => {
 };
 
 const server = http.createServer(async (req, res) => {
-    if (req.url === '/v1') {
+    if (req.url === '/') {
         res.writeHead(200, {'Content-Type': 'text/html'});
 
         const {animals, error} = await requestAnimalsFromAnimalRescue();

@@ -42,3 +42,9 @@ deploy:
         valuesFiles: [k8s/external-oauth2-proxy-helm-values.yaml]
         remote: true
         namespace: animal-rescue
+
+      - name: external-dns
+        chartPath: bitnami/external-dns
+        valuesFiles: [ k8s/external-dns-helm-values.yaml ]
+        remote: true
+        namespace: animal-rescue

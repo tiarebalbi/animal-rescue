@@ -5,21 +5,20 @@ metadata:
     kubernetes.io/ingress.class: nginx
     # type of authentication
     # name of the secret that contains the user/password definitions
-    nginx.ingress.kubernetes.io/auth-url: "https://auth-external.spring.animalrescue.online/oauth2/auth"
-    nginx.ingress.kubernetes.io/auth-signin: "https://auth-external.spring.animalrescue.online/oauth2/start?rd=https%3A%2F%2Follie.spring.animalrescue.online"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/auth-url: "https://auth-external.kubedemo.xyz/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://auth-external.kubedemo.xyz/oauth2/start?rd=https%3A%2F%2Follie.kubedemo.xyz"
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
     kubernetes.io/tls-acme: "true"
   name: animal-rescue-external-ingress
 spec:
   rules:
-  - host: ollie.spring.animalrescue.online
+  - host: ollie.kubedemo.xyz
     http:
       paths:
-      - path: "/v1"
-        backend:
+      - backend:
           serviceName: animal-rescue
           servicePort: 80
-  - host: partner.ollie.spring.animalrescue.online
+  - host: partner.ollie.kubedemo.xyz
     http:
       paths:
       - backend:
@@ -27,8 +26,8 @@ spec:
           servicePort: 80
   tls:
   - hosts:
-    - ollie.spring.animalrescue.online
+    - ollie.kubedemo.xyz
     secretName: animal-rescue-certs
   - hosts:
-    - partner.ollie.spring.animalrescue.online
+    - partner.ollie.kubedemo.xyz
     secretName: partner-certs
