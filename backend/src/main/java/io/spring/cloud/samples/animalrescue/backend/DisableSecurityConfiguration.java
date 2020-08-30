@@ -13,11 +13,6 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 public class DisableSecurityConfiguration {
 
 	@Bean
-	public Principal defaultPrincipal() {
-		return () -> "default_user";
-	}
-
-	@Bean
 	public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
 		// @formatter:off
 		return http

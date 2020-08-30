@@ -8,15 +8,16 @@ metadata:
     # name of the secret that contains the user/password definitions
     nginx.ingress.kubernetes.io/auth-secret: ingress-basic-auth
   name: animal-rescue-ingress
+  namespace: animal-rescue
 spec:
   rules:
-    - host: spring.animalrescue.online
+    - host: animalrescue.kubedemo.xyz
       http:
         paths:
           - backend:
               serviceName: animal-rescue
               servicePort: 80
-    - host: partner.spring.animalrescue.online
+    - host: partner.kubedemo.xyz
       http:
         paths:
           - backend:

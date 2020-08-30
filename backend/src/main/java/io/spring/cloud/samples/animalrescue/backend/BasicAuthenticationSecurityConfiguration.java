@@ -41,6 +41,7 @@ public class BasicAuthenticationSecurityConfiguration {
 				.pathMatchers("/actuator/**").permitAll()
 				.anyExchange().authenticated()
 			.and()
+			.csrf().disable()
 			.build();
 		// @formatter:on
 	}

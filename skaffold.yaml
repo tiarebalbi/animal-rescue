@@ -26,4 +26,4 @@ deploy:
     paths:
     - backend/k8s/
     - external-api/k8s/
-    - k8s/
+

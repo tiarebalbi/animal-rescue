@@ -1,0 +1,15 @@
+sources:
+  - service
+  - ingress
+
+domainFilters:
+  - kubedemo.xyz
+
+provider: google
+
+google:
+  project: cf-spring-scs
+  serviceAccountSecret: cloud-dns-admin
+  serviceAccountSecretKey: gcp-dns-account-credentials.json
+
+policy: sync # Default value is "upsert-only"
