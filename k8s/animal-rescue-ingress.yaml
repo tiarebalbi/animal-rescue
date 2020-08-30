@@ -11,13 +11,13 @@ metadata:
   namespace: animal-rescue
 spec:
   rules:
-    - host: animalrescue.kubedemo.xyz
+    - host: animalrescue.bella.kubedemo.xyz
       http:
         paths:
           - backend:
               serviceName: animal-rescue
               servicePort: 80
-    - host: partner.kubedemo.xyz
+    - host: partner.bella.kubedemo.xyz
       http:
         paths:
           - backend:
