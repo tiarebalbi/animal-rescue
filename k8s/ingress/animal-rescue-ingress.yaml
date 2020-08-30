@@ -24,10 +24,10 @@ spec:
         paths:
           - backend:
               serviceName: animal-rescue
-              servicePort: 80
+              servicePort: 8080
     - host: partner.kubedemo.xyz
       http:
         paths:
           - backend:
               serviceName: partner-adoption-center
-              servicePort: 80
+              servicePort: 8080

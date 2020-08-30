@@ -23,6 +23,6 @@ ingress:
     kubernetes.io/tls-acme: "true"
 #    acme.cert-manager.io/http01-edit-in-place: "true"
   tls:
-  - secretName: oauth2-internal-proxy-https-cert
+  - secretName: oauth2-proxy-https-cert
     hosts:
     - auth-internal.kubedemo.xyz

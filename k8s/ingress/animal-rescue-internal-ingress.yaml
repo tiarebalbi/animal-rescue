@@ -12,17 +12,14 @@ metadata:
   name: animal-rescue-internal-ingress
 spec:
   rules:
-    - host: ollie.kubedemo.xyz
+    - host: actuator.ollie.kubedemo.xyz
       http:
         paths:
         - path: "/actuator"
           backend:
             serviceName: animal-rescue
-            servicePort: 80
+            servicePort: 9000
   tls:
   - hosts:
-    - ollie.kubedemo.xyz
+    - actuator.ollie.kubedemo.xyz
     secretName: animal-rescue-certs
-  - hosts:
-    - partner.ollie.kubedemo.xyz
-    secretName: partner-certs

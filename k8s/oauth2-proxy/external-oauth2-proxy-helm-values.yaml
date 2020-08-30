@@ -23,6 +23,6 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-staging
     kubernetes.io/tls-acme: "true"
   tls:
-  - secretName: oauth2-external-proxy-https-cert
+  - secretName: oauth2-proxy-https-cert
     hosts:
     - auth-external.kubedemo.xyz

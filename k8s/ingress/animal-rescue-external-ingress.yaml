@@ -17,17 +17,17 @@ spec:
       paths:
       - backend:
           serviceName: animal-rescue
-          servicePort: 80
+          servicePort: 8080
   - host: partner.ollie.kubedemo.xyz
     http:
       paths:
       - backend:
           serviceName: partner-adoption-center
-          servicePort: 80
+          servicePort: 8080
   tls:
   - hosts:
     - ollie.kubedemo.xyz
     secretName: animal-rescue-certs
   - hosts:
     - partner.ollie.kubedemo.xyz
-    secretName: partner-certs
+    secretName: animal-rescue-certs

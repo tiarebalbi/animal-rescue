@@ -7,4 +7,4 @@
 *.ipr
 out/
 scripts/out/
-/k8s/secret/
+**/secret/

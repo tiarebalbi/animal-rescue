@@ -25,26 +25,26 @@ deploy:
   kustomize:
     paths:
     - backend/k8s/
-    - external-api/k8s/
-    - k8s
-  helm:
-    flags:
-      install: [ "--create-namespace" ]
-    releases:
-      - name: oauth2-proxy-internal
-        chartPath: stable/oauth2-proxy
-        valuesFiles: [k8s/internal-oauth2-proxy-helm-values.yaml]
-        remote: true
-        namespace: animal-rescue
-
-      - name: oauth2-proxy-external
-        chartPath: stable/oauth2-proxy
-        valuesFiles: [k8s/external-oauth2-proxy-helm-values.yaml]
-        remote: true
-        namespace: animal-rescue
-
-      - name: external-dns
-        chartPath: bitnami/external-dns
-        valuesFiles: [ k8s/external-dns-helm-values.yaml ]
-        remote: true
-        namespace: animal-rescue
+#    - external-api/k8s/
+#    - k8s
+#  helm:
+#    flags:
+#      install: [ "--create-namespace" ]
+#    releases:
+#      - name: oauth2-proxy-internal
+#        chartPath: stable/oauth2-proxy
+#        valuesFiles: [k8s/oauth2-proxy/internal-oauth2-proxy-helm-values.yaml]
+#        remote: true
+#        namespace: oauth2-proxy
+#
+#      - name: oauth2-proxy-external
+#        chartPath: stable/oauth2-proxy
+#        valuesFiles: [k8s/oauth2-proxy/external-oauth2-proxy-helm-values.yaml]
+#        remote: true
+#        namespace: oauth2-proxy
+#
+#      - name: external-dns
+#        chartPath: bitnami/external-dns
+#        valuesFiles: [ k8s/external-dns/external-dns-helm-values.yaml ]
+#        remote: true
+#        namespace: external-dns
